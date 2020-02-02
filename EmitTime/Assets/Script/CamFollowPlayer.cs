@@ -11,6 +11,7 @@ public class CamFollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    	Debug.Log("hola");
         cam_tr = gameObject.GetComponent<Transform>();
     }
 
