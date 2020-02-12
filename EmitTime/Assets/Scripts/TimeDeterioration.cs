@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeDeterioration : MonoBehaviour
 {
-    private Transform current_pos;    
+    private Transform current_pos;
     private Vector3 start_position;
     private Vector3 end_position;
 
@@ -51,7 +51,6 @@ public class TimeDeterioration : MonoBehaviour
             Vector3 new_rotation = new Vector3(0, 0,
                                             LERP(curr_time, start_time, end_time, start_rotation, end_rotation));
             
-            Debug.Log(curr_time +"="+start_position+"="+ end_position+"="+new_position);
             current_pos.position = new_position;
             current_pos.eulerAngles = new_rotation;
             current_pos.localScale = new_scale;
