@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour {
             Debug.Log("fe");
 			can_jump = true;
 		}
+		
+		if (Manager.Instance.is_inverted) {
+            horizontalMove *= -1;
+        }
 	}
 
 	void FixedUpdate () {
