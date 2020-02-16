@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour {
         rigib.velocity = new Vector2(horizontalMove, rigib.velocity.y);
         //jump = false;
         if (can_jump) {
-            rigib.AddForce(new Vector2(0f, 2000f));
+            rigib.AddForce(new Vector2(0f, jumpSpeed));
             can_jump = false;
             is_in_ground = false;
         }
