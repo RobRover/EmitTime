@@ -4,23 +4,33 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
+	public GameObject openDoor;
+	public GameObject closedDoor;
 
-	public GameObject door;
+	void Start()
+	{
+		closedDoor.SetActive(true);
+		openDoor.SetActive(false);
+
+
+	}
+
     private void OnTriggerEnter2D(Collider2D collider)
 	{
-		door.SetActive(false);
+		closedDoor.SetActive(false);
+		openDoor.SetActive(true);
 	}
 
 	private void OnTriggerStay2D(Collider2D collider)
 	{
-		Debug.Log("Trigger!");
-		door.SetActive(false);
+		closedDoor.SetActive(false);
+		openDoor.SetActive(true);
 	}
 
 	private void OnTriggerExit2D(Collider2D collider)
 	{
-		Debug.Log("Trigger!");
-		door.SetActive(true);
+		closedDoor.SetActive(true);
+		openDoor.SetActive(false);
 	}
 
 }
