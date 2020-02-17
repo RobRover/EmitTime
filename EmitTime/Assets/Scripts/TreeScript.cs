@@ -113,11 +113,11 @@ public class TreeScript : MonoBehaviour
 		scale = new Vector3(time * 0.4f, time * 0.4f, time * 0.4f);
 		leaves.transform.localScale = leavesScale + scale;
 
-		Vector3 pos = new Vector3(0, time * 1.15f, 0);
+		Vector3 pos = new Vector3(0, time * 1f, 0);
 
 		trunk.transform.position = trunkPos + pos;
 
-		pos = new Vector3(0, time * 3.5f, 0);
+		pos = new Vector3(0, time * 3.2f, 0);
 		leaves.transform.position = leavesPos + pos;
 	}
 
