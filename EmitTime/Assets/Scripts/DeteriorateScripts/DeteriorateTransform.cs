@@ -12,7 +12,6 @@ public class DeteriorateTransform : MonoBehaviour
     private float start_rotation;
     public float end_rotation;
     
-    public Transform end_transf;
     public int start_time;
     public int end_time;
     // Start is called before the first frame update
@@ -21,9 +20,6 @@ public class DeteriorateTransform : MonoBehaviour
         current_pos = this.GetComponent<Transform>();
         start_scale = current_pos.localScale;
         start_rotation = current_pos.eulerAngles.z;
-
-        end_scale = end_transf.localScale;
-        end_rotation = end_transf.eulerAngles.z;
     }
     
     float LERP(float x, float x1, float x2, float f1, float f2) {

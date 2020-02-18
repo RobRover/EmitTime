@@ -2647,7 +2647,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432361991}
-  - component: {fileID: 432361993}
   - component: {fileID: 432361994}
   - component: {fileID: 432361992}
   - component: {fileID: 432361995}
@@ -2693,34 +2692,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.3}
   serializedVersion: 2
   m_Radius: 0.8
---- !u!114 &432361993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432361990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c72da15e904543bf93bdabde7f1c316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_GroundCheck: {fileID: 329875379}
-  m_CeilingCheck: {fileID: 1905687185}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &432361994
 Rigidbody2D:
   serializedVersion: 4
@@ -2755,7 +2726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground_check: {fileID: 329875379}
-  controller: {fileID: 432361993}
+  controller: {fileID: 0}
   layer_ground:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2881,6 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_text: {fileID: 1807647418}
+  prev_pos: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

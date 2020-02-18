@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraFollowPlayer : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
     public Text time_text;    
 
@@ -34,8 +34,9 @@ public class CameraFollowPlayer : MonoBehaviour
         else if(has_moved && Manager.Instance.is_inverted)
             Manager.Instance.time -= x_diff;
         
-        time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
+        //time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
 
+        Debug.Log(Manager.Instance.time);
         prev_pos = Manager.Instance.player.transform.position;
 
         if(Camera.main != null)
@@ -46,7 +47,7 @@ public class CameraFollowPlayer : MonoBehaviour
             Camera.main.transform.position = camera_pos;
         }
 
-        if(Input.GetButtonDown("Invert") && Camera.main != null){
+        if(Input.GetKeyDown(KeyCode.LeftShift) && Camera.main != null){
 
             Manager.Instance.is_inverted = !Manager.Instance.is_inverted;
 
@@ -55,7 +56,5 @@ public class CameraFollowPlayer : MonoBehaviour
             camera_pos.z *= -1;
             Camera.main.transform.position = camera_pos;
         }
-
-
     }
 }
