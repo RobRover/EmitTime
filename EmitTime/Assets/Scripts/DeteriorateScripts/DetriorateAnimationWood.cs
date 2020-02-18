@@ -45,7 +45,7 @@ public class DetriorateAnimationWood : MonoBehaviour
             } else {
                 //rb.enabled = true;
                 //rb.isKinematic = true;
-                rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 rb.gravityScale = 1f;
                 box_collider.enabled = true;
             }
