@@ -50,3 +50,6 @@ TagManager:
   - name: Character
     uniqueID: 3365899825
     locked: 0
+  - name: Front Character
+    uniqueID: 4070956271
+    locked: 0

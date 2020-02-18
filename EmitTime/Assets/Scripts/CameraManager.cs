@@ -44,6 +44,7 @@ public class CameraManager : MonoBehaviour
             Vector3 camera_pos = Camera.main.transform.position;
             camera_pos.x = Manager.Instance.player.transform.position.x;
             //camera_pos.y = Manager.Instance.player.transform.position.y;
+            //camera_pos.y = Manager.Instance.player.transform.position.y + 3;
             Camera.main.transform.position = camera_pos;
         }
 

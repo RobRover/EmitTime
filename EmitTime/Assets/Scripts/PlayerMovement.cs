@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		if (is_in_ground && (Input.GetButtonDown("Jump") || Input.GetKeyDown("up"))) {
-            Debug.Log("fe");
+		if (is_in_ground && (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))) {
 			can_jump = true;
 		}
 		
@@ -43,7 +42,8 @@ public class PlayerMovement : MonoBehaviour {
         rigib.velocity = new Vector2(horizontalMove, rigib.velocity.y);
         //jump = false;
         if (can_jump) {
-            rigib.AddForce(new Vector2(0f, 2000f));
+            Debug.Log("QQQQQQQQQQQQQ");
+            rigib.AddForce(new Vector2(0f, jumpSpeed));
             can_jump = false;
             is_in_ground = false;
         }

@@ -11,11 +11,10 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
-    	if(Instance == null)
+    	if(Instance == null && player != null)
     	{
     		Instance = this;
     		time = 0;
-    		player = GameObject.Find("Character");
     		is_inverted = false;
     	}
     }
