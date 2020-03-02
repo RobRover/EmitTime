@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,9 +28,14 @@ public class MySceneManager : MonoBehaviour
 
         scene = SceneManager.GetActiveScene();
 
-        if(Manager.Instance.player.transform.position.x < 25f && scene.name == "Scene1")
+        if(Math.Floor(Manager.Instance.end_door.transform.position.x) == Math.Floor(Manager.Instance.player.transform.position.x) 
+            && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
+            && scene.name == "Scene1")
             Application.LoadLevel("Scene2");
 
-        Debug.Log("Pos x : " + Manager.Instance.player.transform.position.x);
+        if(Math.Floor(Manager.Instance.end_door.transform.position.x) == Math.Floor(Manager.Instance.player.transform.position.x) 
+            && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
+            && scene.name == "Scene2")
+            Application.LoadLevel("Scene1");
     }
 }

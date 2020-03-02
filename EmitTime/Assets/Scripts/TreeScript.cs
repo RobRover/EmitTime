@@ -27,8 +27,6 @@ public class TreeScript : MonoBehaviour
 	private Vector3 trunkPos;
 
 	public float factor;
-	public float min_time;
-	public float max_time;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -88,9 +86,7 @@ public class TreeScript : MonoBehaviour
 	        	trunk.active = true;
 	        	leaves.GetComponent<BoxCollider2D>().enabled = true;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = true;
-	        	if (time > max_time && time < min_time) {
-	        		transformTree();
-	        	}
+	        	transformTree();
 	            
 	            leavesSprite.sprite = states[state].leavesSprite;
 	            trunkSprite.sprite = states[state].trunkSprite;

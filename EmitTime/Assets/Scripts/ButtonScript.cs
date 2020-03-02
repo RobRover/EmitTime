@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
-	public GameObject openDoor;
-	public GameObject closedDoor;
-
+	private GameObject openDoor;
+	private GameObject closedDoor;
     private Animator anim;
     
 	void Start()
 	{
+
+		openDoor = Manager.Instance.end_door.transform.GetChild(0).gameObject;
+		closedDoor = Manager.Instance.end_door.transform.GetChild(1).gameObject;
+
 		closedDoor.SetActive(true);
 		openDoor.SetActive(false);
 
