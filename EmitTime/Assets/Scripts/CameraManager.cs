@@ -7,12 +7,21 @@ using UnityEngine.UI;
 public class CameraManager : MonoBehaviour
 {
     public Text time_text;    
-
     private Vector3 prev_pos;
+    
+    // Keep Y distance between camera and player
+    private float y_distance;
+
 
     void Start()
     {
         prev_pos = new Vector3(0,0,0);
+        if(Camera.main != null)
+            y_distance = Math.Abs(Manager.Instance.player.transform.position.y - Camera.main.transform.position.y);
+        else
+            y_distance = 0;
+
+        Debug.Log("Y distance: " + y_distance);
     }
 
     void Update()
@@ -20,12 +29,15 @@ public class CameraManager : MonoBehaviour
         //Don't have prev pos
         bool has_moved;
 
-        if(prev_pos == new Vector3(0,0,0))
+        if(prev_pos == new Vector3(0,0,0)){
             has_moved = false;
+        }
         else if(prev_pos.x == Manager.Instance.player.transform.position.x){
             has_moved = false;
-        }else
+        }else{
             has_moved = true;
+
+        }
 
         float x_diff = Manager.Instance.player.transform.position.x - prev_pos.x;
 
@@ -34,17 +46,16 @@ public class CameraManager : MonoBehaviour
         else if(has_moved && Manager.Instance.is_inverted)
             Manager.Instance.time -= x_diff;
         
-        //time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
+        if(time_text)
+            time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
 
-        Debug.Log(Manager.Instance.time);
         prev_pos = Manager.Instance.player.transform.position;
 
         if(Camera.main != null)
         {
             Vector3 camera_pos = Camera.main.transform.position;
             camera_pos.x = Manager.Instance.player.transform.position.x;
-            //camera_pos.y = Manager.Instance.player.transform.position.y;
-            //camera_pos.y = Manager.Instance.player.transform.position.y + 3;
+            camera_pos.y = Manager.Instance.player.transform.position.y + y_distance;
             Camera.main.transform.position = camera_pos;
         }
 

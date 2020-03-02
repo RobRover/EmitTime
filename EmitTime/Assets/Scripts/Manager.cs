@@ -7,6 +7,7 @@ public class Manager : MonoBehaviour
 	public static Manager Instance {get; private set;}
     public float time;
     public GameObject player;
+    public GameObject end_door;
     public bool is_inverted;
 
     private void Awake()
