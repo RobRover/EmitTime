@@ -20,8 +20,6 @@ public class CameraManager : MonoBehaviour
             y_distance = Math.Abs(Manager.Instance.player.transform.position.y - Camera.main.transform.position.y);
         else
             y_distance = 0;
-
-        Debug.Log("Y distance: " + y_distance);
     }
 
     void Update()
