@@ -28,14 +28,27 @@ public class MySceneManager : MonoBehaviour
 
         scene = SceneManager.GetActiveScene();
 
-        if(Math.Floor(Manager.Instance.end_door.transform.position.x) == Math.Floor(Manager.Instance.player.transform.position.x) 
+        if(checkPlayerPosition()
             && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
             && scene.name == "Scene1")
             Application.LoadLevel("Scene2");
 
-        if(Math.Floor(Manager.Instance.end_door.transform.position.x) == Math.Floor(Manager.Instance.player.transform.position.x) 
+        if(checkPlayerPosition()
             && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
             && scene.name == "Scene2")
+            Application.LoadLevel("Scene BIS");
+
+        if(checkPlayerPosition()
+            && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
+            && scene.name == "Scene BIS")
             Application.LoadLevel("Scene1");
+    }
+
+    //Check if X position of the player is the same as the X position of the door; also check the Y of the player is in the range of the door (door.Y - 2.5, door.Y + 2.5)
+    bool checkPlayerPosition(){
+        return Math.Floor(Manager.Instance.end_door.transform.position.x) == Math.Floor(Manager.Instance.player.transform.position.x) && 
+            (Math.Floor(Manager.Instance.end_door.transform.position.y) + 2.5 >  Math.Floor(Manager.Instance.player.transform.position.y) &&
+                Math.Floor(Manager.Instance.end_door.transform.position.y) - 2.5 <  Math.Floor(Manager.Instance.player.transform.position.y));
+            
     }
 }

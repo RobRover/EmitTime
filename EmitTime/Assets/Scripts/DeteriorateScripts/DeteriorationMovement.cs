@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,10 +29,17 @@ public class DeteriorationMovement : MonoBehaviour
         end_position = end_transf.position;
         end_scale = end_transf.localScale;
         end_rotation = end_transf.eulerAngles.z;
+
+        if(end_rotation > 180)
+            end_rotation = 180 - end_rotation;
     }
     
     float LERP(float x, float x1, float x2, float f1, float f2) {
-        return f1 + ((f2 - f1) / (x2 - x1 + 0.0001f)) * (x - x1);
+        Debug.Log("f2: " + f2);
+        if(f2 > 0)
+            return f1 + ((f2 - f1) / (x2 - x1 + 0.0001f)) * (x - x1);
+        else
+            return f1 - ((f2 - f1) / (x2 - x1 + 0.0001f)) * (x - x1);
     }
 
     // Update is called once per frame
