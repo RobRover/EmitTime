@@ -46,6 +46,8 @@ public class CameraManager : MonoBehaviour
         
         if(time_text)
             time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
+        else
+            Debug.Log(Manager.Instance.time);
 
         prev_pos = Manager.Instance.player.transform.position;
 

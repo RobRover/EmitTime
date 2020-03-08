@@ -50,7 +50,7 @@ public class DeteriorationMovement : MonoBehaviour
 
             Vector3 new_rotation = new Vector3(0, 0,
                                             LERP(curr_time, start_time, end_time, start_rotation, end_rotation));
-            
+
             current_pos.position = new_position;
             current_pos.eulerAngles = new_rotation;
             current_pos.localScale = new_scale;
