@@ -39,7 +39,7 @@ public class DeteriorationMovement : MonoBehaviour
     {
         float curr_time = Manager.Instance.time;
 
-        if (curr_time > start_time && curr_time < end_time) {
+        if (((start_time < end_time) && (curr_time > start_time && curr_time < end_time)) || ((start_time > end_time) && (curr_time < start_time && curr_time > end_time))) {
             Vector3 new_position = new Vector3(LERP(curr_time, start_time, end_time, start_position.x, end_position.x),
                                             LERP(curr_time, start_time, end_time, start_position.y, end_position.y),
                                             start_position.z);
