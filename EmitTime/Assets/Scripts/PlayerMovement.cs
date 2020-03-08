@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		if (is_in_ground && (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))) {
+		if (is_in_ground && (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.UpArrow))) {
 			can_jump = true;
 		}
 		
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate() {
 		// Move our character
 		//controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		//Vector3 targetVelocity = new Vector2(horizontalMove * 10f, rigib.velocity.y);
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour {
         rigib.velocity = new Vector2(horizontalMove, rigib.velocity.y);
         //jump = false;
         if (can_jump) {
-            Debug.Log("QQQQQQQQQQQQQ");
+            Debug.Log(can_jump);
             rigib.AddForce(new Vector2(0f, jumpSpeed));
             can_jump = false;
             is_in_ground = false;
