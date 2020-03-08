@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		
 		if (Manager.Instance.is_inverted) {
-            horizontalMove *= -1;
+            //horizontalMove *= -1;
+            
         }
 	}
 

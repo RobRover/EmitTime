@@ -11,6 +11,9 @@ public class CameraManager : MonoBehaviour
     
     // Keep Y distance between camera and player
     private float y_distance;
+    
+    public float min_time;
+    public float max_time;
 
 
     void Start()
@@ -44,6 +47,8 @@ public class CameraManager : MonoBehaviour
         else if(has_moved && Manager.Instance.is_inverted)
             Manager.Instance.time -= x_diff;
         
+        Manager.Instance.time = Mathf.Clamp(Manager.Instance.time, min_time, max_time);
+        
         if(time_text)
             time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
         else
@@ -62,11 +67,13 @@ public class CameraManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift) && Camera.main != null){
 
             Manager.Instance.is_inverted = !Manager.Instance.is_inverted;
-
-            Camera.main.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+            Manager.Instance.player.transform.localScale = new Vector3(Manager.Instance.player.transform.localScale.x * -1,
+                                                          Manager.Instance.player.transform.localScale.y,
+                                                          Manager.Instance.player.transform.localScale.z);
+            /*Camera.main.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
             Vector3 camera_pos = Camera.main.transform.position;
             camera_pos.z *= -1;
-            Camera.main.transform.position = camera_pos;
+            Camera.main.transform.position = camera_pos;*/
         }
     }
 }

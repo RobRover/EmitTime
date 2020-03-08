@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_text: {fileID: 0}
+  min_time: 0
+  max_time: 20
 --- !u!1 &585036832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131015568633284106, guid: 4b7f7ef897c1b254fb4580f6a57baac7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8131015568633284107, guid: 4b7f7ef897c1b254fb4580f6a57baac7,
         type: 3}
