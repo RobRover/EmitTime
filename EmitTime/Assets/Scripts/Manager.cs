@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour
     public float time;
     public GameObject player;
     public GameObject end_door;
+    public GameObject camera;
     public bool is_inverted;
 
     private void Awake()
