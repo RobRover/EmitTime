@@ -14,10 +14,13 @@ public class CameraManager : MonoBehaviour
     
     public float min_time;
     public float max_time;
-
+    public float time;
+    
+    public bool show_debug;
 
     void Start()
     {
+        Manager.Instance.camera = gameObject;
         prev_pos = new Vector3(0,0,0);
         if(Camera.main != null)
             y_distance = Math.Abs(Manager.Instance.player.transform.position.y - Camera.main.transform.position.y);
@@ -48,11 +51,13 @@ public class CameraManager : MonoBehaviour
             Manager.Instance.time -= x_diff;
         
         Manager.Instance.time = Mathf.Clamp(Manager.Instance.time, min_time, max_time);
+        time = Manager.Instance.time;
         
         if(time_text)
             time_text.text = "Time: " + Math.Floor(Manager.Instance.time).ToString();
         else
-            Debug.Log(Manager.Instance.time);
+            if (show_debug)
+                Debug.Log(Manager.Instance.time);
 
         prev_pos = Manager.Instance.player.transform.position;
 
