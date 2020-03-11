@@ -9640,6 +9640,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_text: {fileID: 1807647418}
+  min_time: -50
+  max_time: 100
+  time: 0
+  show_debug: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -9977,6 +9981,7 @@ MonoBehaviour:
   time: 0
   player: {fileID: 432361990}
   end_door: {fileID: 724397520}
+  camera: {fileID: 0}
   is_inverted: 0
 --- !u!4 &743322672
 Transform:
