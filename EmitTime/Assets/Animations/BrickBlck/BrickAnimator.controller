@@ -306,7 +306,7 @@ AnimatorController:
   m_Name: BrickAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: BreakLevel
+  - m_Name: DoorTime
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
