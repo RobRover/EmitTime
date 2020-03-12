@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
-    public Text time_text;    
-    private Vector3 prev_pos;
+    [SerializeField] public Text time_text;    
+    [SerializeField] private Vector3 prev_pos;
     
     // Keep Y distance between camera and player
-    private float y_distance;
+    [NonSerialized] private float y_distance;
     
-    public float min_time;
-    public float max_time;
-    public float time;
+    [SerializeField] public float min_time;
+    [SerializeField] public float max_time;
+    [NonSerialized] public float time;
     
-    public bool show_debug;
+    [SerializeField] public bool show_debug = false;
 
     void Start()
     {
