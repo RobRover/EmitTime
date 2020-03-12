@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class DoorTime : MonoBehaviour
     public int start_time;
     public int end_time;
     public string animation_name;
-    
+    public ButtonScript button;
     private Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class DoorTime : MonoBehaviour
             //anim[animation_name].time = index;
             Debug.Log(index);
             //anim.Play(animation_name, 0, index);
-            anim.SetInteger("DoorTime",index);
+            anim.SetBool("ButtonPressed", button.isPressed);
         }
     }
 }
