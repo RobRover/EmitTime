@@ -10,6 +10,8 @@ public class MySceneManager : MonoBehaviour
     static MySceneManager Instance;
     private Scene scene;
 
+    [NonSerialized] GameObject[] respawns;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,21 +29,23 @@ public class MySceneManager : MonoBehaviour
     {
 
         scene = SceneManager.GetActiveScene();
+        respawns = GameObject.FindGameObjectsWithTag("Respawn");
 
         if(checkPlayerPosition()
             && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
             && scene.name == "Scene1")
-            Application.LoadLevel("Scene2");
+            SceneManager.LoadScene("Scene2");
 
         if(checkPlayerPosition()
             && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
             && scene.name == "Scene2")
-            Application.LoadLevel("Scene BIS");
+            SceneManager.LoadScene("Scene BIS");
 
         if(checkPlayerPosition()
             && Manager.Instance.end_door.transform.GetChild(0).gameObject.activeSelf 
             && scene.name == "Scene BIS")
-            Application.LoadLevel("Scene1");
+            SceneManager.LoadScene("Scene1");
+
     }
 
     //Check if X position of the player is the same as the X position of the door; also check the Y of the player is in the range of the door (door.Y - 2.5, door.Y + 2.5)

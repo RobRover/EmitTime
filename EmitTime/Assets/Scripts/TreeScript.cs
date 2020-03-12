@@ -68,17 +68,17 @@ public class TreeScript : MonoBehaviour
 		switch (state)
 	    {
 	        case 0:
-	        	leaves.active = false;
-	        	trunk.active = false;
-	        	longTrunk.active = false;
+	        	leaves.SetActive(false);
+	        	trunk.SetActive(false);
+	        	longTrunk.SetActive(false);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = false;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = false;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = false;
 	            break;
 	        case 1:
-	        	leaves.active = false;
-	        	trunk.active = true;
-	        	longTrunk.active = false;
+	        	leaves.SetActive(false);
+	        	trunk.SetActive(true);
+	        	longTrunk.SetActive(false);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = false;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = false;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = false;
@@ -87,9 +87,9 @@ public class TreeScript : MonoBehaviour
 	            trunk.transform.position = trunkPos + new Vector3(0, -1.5f, 0);
 	            break;
 	        case 2:
-	        	leaves.active = true;
-	        	trunk.active = true;
-	        	longTrunk.active = false;
+	        	leaves.SetActive(true);
+	        	trunk.SetActive(true);
+	        	longTrunk.SetActive(false);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = true;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = true;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = false;
@@ -99,9 +99,9 @@ public class TreeScript : MonoBehaviour
 	            trunkSprite.sprite = states[state].trunkSprite;
 	            break;
 	        case 3:
-	        	leaves.active = true;
-	        	trunk.active = true;
-	        	longTrunk.active = false;
+	        	leaves.SetActive(true);
+	        	trunk.SetActive(true);
+	        	longTrunk.SetActive(false);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = true;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = true;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = false;
@@ -110,23 +110,26 @@ public class TreeScript : MonoBehaviour
 	            break;
 
 	        case 4:
-	        	leaves.active = true;
-	        	trunk.active = false;
-	        	longTrunk.active = true;
+	        	leaves.SetActive(true);
+	        	trunk.SetActive(false);
+	        	longTrunk.SetActive(true);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = true;
 	        	trunk.GetComponent<BoxCollider2D>().enabled = false;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = true;
+	        	longTrunk.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+	        	longTrunk.transform.GetComponent<Rigidbody2D>().mass = 1000;
 	            leavesSprite.sprite = states[state].leavesSprite;
 	            trunkSprite.sprite = states[state].trunkSprite;
 	            break;
 
 	        case 5:
-	        	leaves.active = false;
-	        	trunk.active = false;
-	        	longTrunk.active = true;
+	        	leaves.SetActive(false);
+	        	trunk.SetActive(false);
+	        	longTrunk.SetActive(true);
 	        	leaves.GetComponent<BoxCollider2D>().enabled = false;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = false;
 	        	longTrunk.GetComponent<BoxCollider2D>().enabled = true;
+	        	longTrunk.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 	            trunkSprite.sprite = states[state].trunkSprite;
 	            transformLongTrunk();
 	            break;
@@ -179,14 +182,10 @@ public class TreeScript : MonoBehaviour
 		if((inversed && angle > 87) || (!inversed && angle < -87))
 			angle = end_angle;
 
-		Debug.Log("angle: " + angle);
-
 		longTrunk.transform.localRotation = Quaternion.Euler(0, 0, angle);
 		Vector3 pos = new Vector3(0, time * 1.2f, 0) + longTrunkPos;
 
 		longTrunk.transform.position = pos;
 
-
 	}
-
 }

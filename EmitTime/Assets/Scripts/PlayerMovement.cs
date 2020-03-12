@@ -1,61 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private Rigidbody2D rigib;
-    public Transform ground_check;
-	public CharacterController2D controller;
-    public LayerMask layer_ground;
+	[SerializeField] public CharacterController2D controller;
 
-	public float runSpeed = 10f;
-    public float jumpSpeed = 20f;
+	[SerializeField] public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
-	bool can_jump = false;
-    bool is_in_ground;
-    
-    void Start() {
-        rigib = this.GetComponent<Rigidbody2D>();
-    }
+	bool jump = false;
 	
 	// Update is called once per frame
 	void Update () {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		if (is_in_ground && (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))) {
-			can_jump = true;
+		if (Input.GetButtonDown("Jump"))
+		{
+			jump = true;
 		}
-		
-		if (Manager.Instance.is_inverted) {
-            horizontalMove *= -1;
-        }
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate ()
+	{
 		// Move our character
-		//controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-		//Vector3 targetVelocity = new Vector2(horizontalMove * 10f, rigib.velocity.y);
-        // And then smoothing it out and applying it to the character
-        rigib.velocity = new Vector2(horizontalMove, rigib.velocity.y);
-        //jump = false;
-        if (can_jump) {
-            Debug.Log("QQQQQQQQQQQQQ");
-            rigib.AddForce(new Vector2(0f, jumpSpeed));
-            can_jump = false;
-            is_in_ground = false;
-        }
-        
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(ground_check.position, .2f, layer_ground);
-		for (int i = 0; i < colliders.Length; i++) {
-			if (colliders[i].gameObject != gameObject) {
-				is_in_ground = true;
-				break;
-			} else {
-                is_in_ground = false;
-            }
-		}
+		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+		jump = false;
 	}
+
+	void OnCollisionEnter(Collision collision)
+    {
+       GameObject parent = collision.gameObject.transform.parent.gameObject;
+       Debug.Log(parent.name);
+       Debug.Log("hola");
+    }
 }

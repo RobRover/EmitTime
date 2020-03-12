@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Manager : MonoBehaviour
 {
 	public static Manager Instance {get; private set;}
-    public float time;
-    public GameObject player;
-    public GameObject end_door;
-    public bool is_inverted;
+    
+    [NonSerialized] public float time;
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject end_door;
+    [SerializeField] public bool is_inverted;
 
     private void Awake()
     {
