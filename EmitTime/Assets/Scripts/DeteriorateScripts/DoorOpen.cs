@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorTime : MonoBehaviour
+public class DoorOpen : MonoBehaviour
 {
     public int start_index;
     public int end_index;
