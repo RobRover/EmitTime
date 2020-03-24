@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 8
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5521204138000727527}
@@ -236,7 +236,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 4
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5652370625397967658}
@@ -420,7 +420,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5103510640867357814}
@@ -472,7 +472,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 15
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3750377402587022649}
@@ -550,7 +550,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 26
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1436026259027755353}
@@ -578,7 +578,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 6
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -552923646121088058}
@@ -756,7 +756,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 20
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 192739378289693448}
@@ -784,7 +784,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 9
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6046765711121748818}
@@ -884,7 +884,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 14
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6772789994662475281}
@@ -912,7 +912,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 27
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2108153538218490551}
@@ -990,7 +990,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 3
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8072312002945216454}
@@ -1043,7 +1043,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 18
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2227851870392735958}
@@ -1071,7 +1071,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 17
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3964552250098351009}
@@ -1149,7 +1149,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 2
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2777427940326738696}
@@ -1177,7 +1177,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 23
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1702764031966155050}
@@ -1227,7 +1227,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 22
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7137971619625263851}
@@ -1311,7 +1311,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1433,7 +1433,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 11
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8862964403610582244}
@@ -1461,7 +1461,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 24
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6550901370112671984}
@@ -1539,7 +1539,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 19
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7369562273768198518}
@@ -1592,7 +1592,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 10
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 401909110681475838}
@@ -1895,7 +1895,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 21
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5045539046564318604}
@@ -1923,7 +1923,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 16
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7745680379197237306}
@@ -1951,7 +1951,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 5
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4323628896915644773}
@@ -2079,7 +2079,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 25
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1473498862642805811}
@@ -2132,7 +2132,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 12
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6752089245208011706}
@@ -2185,7 +2185,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 13
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6286384124325490971}
@@ -2263,7 +2263,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 28
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2353384084189741030}
@@ -2290,7 +2290,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 1
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2660483161776491156}
@@ -2318,7 +2318,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Animation 7
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4319902573896939189}
