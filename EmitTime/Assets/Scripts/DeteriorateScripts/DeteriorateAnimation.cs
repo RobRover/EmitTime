@@ -32,7 +32,6 @@ public class DeteriorateAnimation : MonoBehaviour
                 index = end_index;
             }
             //anim[animation_name].time = index;
-            Debug.Log(index);
             //anim.Play(animation_name, 0, index);
             anim.SetInteger("BreakLevel",index);
         }

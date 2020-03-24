@@ -54,9 +54,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float move, bool jump)
 	{
 		//only control the player if grounded or airControl is turned on
-        Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-        m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-		/*if (m_Grounded)
+		if (m_Grounded)
 		{
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
@@ -64,7 +62,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			/*if (move > 0 && !m_FacingRight)
+			if (move > 0 && !m_FacingRight)
 			{
 				//Flip();
 			}
@@ -73,9 +71,7 @@ public class CharacterController2D : MonoBehaviour
 			{
 				//Flip();
 			}
-		} else {
-            
-        }*/
+		}
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
