@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Tree_Scene.unity
+=======
+- path: Assets/Scenes/Scene1.unity
+>>>>>>> 4814618850f2e554d484f0e592fe4223b9cfbfc9
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeriorateSound : MonoBehaviour
 {
 	public AudioClip clip_audio;
-
+∑
 	private float next_time_clip;
 	private float prev_time;
 	private int curr_index;
