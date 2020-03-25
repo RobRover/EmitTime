@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class DeriorateSound : MonoBehaviour
 {
+	public int start_index;
+	public int end_index;
+	public int start_time;
+	public int end_time; 
+	
 	public AudioClip clip_audio;
-∑
 	private float next_time_clip;
 	private float prev_time;
 	private int curr_index;
-
-	private int start_index;
-	private int end_index;
-	private int start_time;
-	private int end_time; 
 
 	private AudioSource au_source;
 	private DetriorateAnimationWood anim_manager;
@@ -30,12 +29,6 @@ public class DeriorateSound : MonoBehaviour
 	void Start()
 	{
 		au_source = GetComponent<AudioSource>();
-		anim_manager = GetComponent<DetriorateAnimationWood>();
-
-		start_index = anim_manager.start_index;
-		end_index = anim_manager.end_index;
-		start_time = anim_manager.start_time;
-		end_time = anim_manager.end_time;
 
 		au_source.clip = clip_audio;
 	}
