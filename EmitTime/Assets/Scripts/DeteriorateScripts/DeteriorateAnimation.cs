@@ -8,7 +8,7 @@ public class DeteriorateAnimation : MonoBehaviour
     public int end_index;
     public int start_time;
     public int end_time;
-    public string animation_name;
+    public string animation_name = "BreakLevel";
     
     private Animator anim;
     // Start is called before the first frame update
@@ -27,13 +27,14 @@ public class DeteriorateAnimation : MonoBehaviour
     {
         if (Manager.Instance.time >= start_time) {
             int index = (int) LERP(Manager.Instance.time, start_time, end_time, start_index, end_index);
+            Debug.Log(LERP(Manager.Instance.time, start_time, end_time, start_index, end_index));
             
             if (index > end_index) {
                 index = end_index;
             }
             //anim[animation_name].time = index;
             //anim.Play(animation_name, 0, index);
-            anim.SetInteger("BreakLevel",index);
+            anim.SetInteger(animation_name, index);
         }
     }
 }
