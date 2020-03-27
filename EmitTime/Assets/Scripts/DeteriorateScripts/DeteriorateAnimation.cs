@@ -15,6 +15,7 @@ public class DeteriorateAnimation : MonoBehaviour
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        anim.SetInteger(animation_name, start_index);
         //anim.speed = 0;
     }
     
