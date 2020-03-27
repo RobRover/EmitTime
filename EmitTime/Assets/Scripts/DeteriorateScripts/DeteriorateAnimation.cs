@@ -32,12 +32,16 @@ public class DeteriorateAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (set_debug) {
-            Debug.Log(anim.GetInteger(animation_name));
-        }
-        
-        if (Manager.Instance.time >= start_time) {
+        /*if (set_debug) {
+            Debug.Log(Manager.Instance.time +"-"+start_time+"-"+ end_time);
+        }*/
+        if (( (start_time < end_time) && Manager.Instance.time >= start_time && Manager.Instance.time <= end_time) || 
+            ( (start_time > end_time) && Manager.Instance.time >= end_time && Manager.Instance.time <= start_time)) {
             int index = (int) LERP(Manager.Instance.time, start_time, end_time, start_index, end_index);
+
+            if (set_debug) {
+                Debug.Log(anim.GetInteger(animation_name) + "-" + index + "+" + Manager.Instance.time);
+            }
 
             // Clamp the Index depending on the scale
             if ((start_index > end_index) && (index > start_index)) {
