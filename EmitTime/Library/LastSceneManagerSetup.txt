@@ -1,11 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Scene_Rob.unity
-||||||| merged common ancestors
-- path: Assets/Scenes/Scene2.unity
-=======
-- path: Assets/Scenes/Scene1.unity
->>>>>>> 6a3cac721617b78f204be51a421945a14de87e68
   isLoaded: 1
   isActive: 1
   isSubScene: 0
