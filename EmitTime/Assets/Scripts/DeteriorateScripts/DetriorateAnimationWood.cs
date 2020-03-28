@@ -20,6 +20,7 @@ public class DetriorateAnimationWood : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         box_collider = this.GetComponent<BoxCollider2D>();
         //anim.speed = 0;
+        anim.SetInteger("BlockLevel", start_index);
     }
     
     float LERP(float x, float x1, float x2, float f1, float f2) {

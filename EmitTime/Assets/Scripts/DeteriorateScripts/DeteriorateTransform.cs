@@ -31,16 +31,18 @@ public class DeteriorateTransform : MonoBehaviour
     {
         float curr_time = Manager.Instance.time;
 
-        if (curr_time > start_time && curr_time < end_time) {
+        if ((curr_time > start_time && curr_time < end_time) || (curr_time < start_time && curr_time > end_time)) {
 
             Vector3 new_scale =  new Vector3(LERP(curr_time, start_time, end_time, start_scale.x, end_scale.x),
                                             LERP(curr_time, start_time, end_time, start_scale.y, end_scale.y),
                                             LERP(curr_time, start_time, end_time, start_scale.z, end_scale.z));
 
-            Vector3 new_rotation = new Vector3(0, 0,
+            if (end_rotation == 0) {
+                 Vector3 new_rotation = new Vector3(0, 0,
                                             LERP(curr_time, start_time, end_time, start_rotation, end_rotation));
-            
-            current_pos.eulerAngles = new_rotation;
+                current_pos.eulerAngles = new_rotation;
+            }
+           
             current_pos.localScale = new_scale;
         }
     }

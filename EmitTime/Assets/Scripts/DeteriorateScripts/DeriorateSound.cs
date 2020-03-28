@@ -7,7 +7,8 @@ public class DeriorateSound : MonoBehaviour
 	public int start_index;
 	public int end_index;
 	public int start_time;
-	public int end_time; 
+	public int end_time;
+	public bool is_animated;
 	
 	public AudioClip clip_audio;
 	private float next_time_clip;
