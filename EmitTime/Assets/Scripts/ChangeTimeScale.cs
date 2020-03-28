@@ -36,7 +36,7 @@ public class ChangeTimeScale : MonoBehaviour
         
         if (col.gameObject.name == colider_name) {
             Vector3 rel_pos = col.transform.position - gameObject.transform.position;
-            CameraManager cam_man = Manager.Instance.GetComponent<Camera>().GetComponent<CameraManager>();
+            CameraManager cam_man = Manager.Instance.mainCam.GetComponent<CameraManager>();
             
             if ((new_direction_left && (rel_pos.x > 0)) || (!new_direction_left && (rel_pos.x < 0))) {
                 //Debug.log();
