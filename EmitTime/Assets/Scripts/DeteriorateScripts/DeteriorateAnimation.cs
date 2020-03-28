@@ -20,10 +20,6 @@ public class DeteriorateAnimation : MonoBehaviour
         anim.SetInteger(animation_name, start_index);
         //anim.speed = 0;
     }
-
-    void OnEnable() {
-        anim.SetInteger(animation_name, start_index);
-    }
     
     float LERP(float x, float x1, float x2, float f1, float f2) {
         return f1 + ((f2 - f1) / (x2 - x1 + 0.0001f)) * (x - x1);
