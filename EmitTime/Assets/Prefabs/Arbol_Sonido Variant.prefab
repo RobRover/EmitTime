@@ -96,6 +96,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1901559799450944702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756384787195923477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d54c6cd36b850170b7a1a609b000cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start_index: 1
+  end_index: 28
+  start_time: 0
+  end_time: 5
+  animation_name: BlockLevel
 --- !u!114 &4859661553701250019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 4859661551744100241, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af,
         type: 3}
       propertyPath: m_Name
-      value: Arbol_Sonido
+      value: Arbol_Sonido Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4859661551744100242, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af,
         type: 3}
@@ -190,7 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 14.207089
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4859661551744100247, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af, type: 3}
+    - {fileID: 4859661551744100246, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af, type: 3}
+    - {fileID: 4859661551744100245, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6a527f6c9cb34dd8a4ed65b5d1d19af, type: 3}
 --- !u!1 &3756384787195923477 stripped
 GameObject:

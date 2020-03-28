@@ -8,14 +8,21 @@ public class DeteriorateAnimation : MonoBehaviour
     public int end_index;
     public int start_time;
     public int end_time;
-    public string animation_name;
+    public string animation_name = "BreakLevel";
+
+    public bool set_debug = false;
     
     private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        anim.SetInteger(animation_name, start_index);
         //anim.speed = 0;
+    }
+
+    void OnEnable() {
+        anim.SetInteger(animation_name, start_index);
     }
     
     float LERP(float x, float x1, float x2, float f1, float f2) {
@@ -25,15 +32,25 @@ public class DeteriorateAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Manager.Instance.time >= start_time) {
+        /*if (set_debug) {
+            Debug.Log(Manager.Instance.time +"-"+start_time+"-"+ end_time);
+        }*/
+        if (( (start_time < end_time) && Manager.Instance.time >= start_time && Manager.Instance.time <= end_time) || 
+            ( (start_time > end_time) && Manager.Instance.time >= end_time && Manager.Instance.time <= start_time)) {
             int index = (int) LERP(Manager.Instance.time, start_time, end_time, start_index, end_index);
-            
-            if (index > end_index) {
+
+            if (set_debug) {
+                Debug.Log(anim.GetInteger(animation_name) + "-" + index + "+" + Manager.Instance.time);
+            }
+
+            // Clamp the Index depending on the scale
+            if ((start_index > end_index) && (index > start_index)) {
+                index = start_index;
+            } else if ((start_index < end_index) && (index > end_index)) {
                 index = end_index;
             }
-            //anim[animation_name].time = index;
-            //anim.Play(animation_name, 0, index);
-            anim.SetInteger("BreakLevel",index);
+            
+            anim.SetInteger(animation_name, index);
         }
     }
 }
