@@ -10,11 +10,11 @@ public class DetriorateAnimationWood : MonoBehaviour
     public int end_time; 
     public int deactivate_frame;
     
-    private Animator anim;
-    private Rigidbody2D rb;
-    private BoxCollider2D box_collider;
+    protected Animator anim;
+    protected Rigidbody2D rb;
+    protected BoxCollider2D box_collider;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         anim = this.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
@@ -23,12 +23,12 @@ public class DetriorateAnimationWood : MonoBehaviour
         anim.SetInteger("BlockLevel", start_index);
     }
     
-    float LERP(float x, float x1, float x2, float f1, float f2) {
+    protected float LERP(float x, float x1, float x2, float f1, float f2) {
         return f1 + ((f2 - f1) / (x2 - x1 + 0.0001f)) * (x - x1);
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (Manager.Instance.time >= start_time) {
             int index = (int) LERP(Manager.Instance.time, start_time, end_time, start_index, end_index);
@@ -36,7 +36,7 @@ public class DetriorateAnimationWood : MonoBehaviour
             if (index > end_index) {
                 index = end_index;
             }
-            
+
             if (index >= deactivate_frame) {
                 //rb.enabled = false;
                 //rb.isKinematic = false;
@@ -46,7 +46,7 @@ public class DetriorateAnimationWood : MonoBehaviour
             } else {
                 //rb.enabled = true;
                 //rb.isKinematic = true;
-                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+               	rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 rb.gravityScale = 1f;
                 box_collider.enabled = true;
             }

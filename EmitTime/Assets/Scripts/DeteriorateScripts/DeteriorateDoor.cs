@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,10 +29,10 @@ public class DeteriorateDoor : MonoBehaviour
     }
 
     bool checkPlayerPosition(){
-        return Mathf.Floor(Manager.Instance.end_door.transform.position.x) == Mathf.Floor(Manager.Instance.player.transform.position.x) && 
-            (Mathf.Floor(Manager.Instance.end_door.transform.position.y) + 2.5 >  Mathf.Floor(Manager.Instance.player.transform.position.y) &&
-                Mathf.Floor(Manager.Instance.end_door.transform.position.y) - 2.5 <  Mathf.Floor(Manager.Instance.player.transform.position.y));
-            
+        return (Math.Floor(Manager.Instance.end_door.transform.position.x) + 10 >  Math.Floor(Manager.Instance.player.transform.position.x) &&
+                Math.Floor(Manager.Instance.end_door.transform.position.x) - 10 <  Math.Floor(Manager.Instance.player.transform.position.x)) &&
+            (Math.Floor(Manager.Instance.end_door.transform.position.y) + 2.5 >  Math.Floor(Manager.Instance.player.transform.position.y) &&
+                Math.Floor(Manager.Instance.end_door.transform.position.y) - 2.5 <  Math.Floor(Manager.Instance.player.transform.position.y));       
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class DeteriorateDoor : MonoBehaviour
         if (needs_button) {
             Manager.Instance.end_door_active = button.isPressed;
         }
+
         if (Manager.Instance.time >= start_time) {
             int index = (int) LERP(Manager.Instance.time, start_time, end_time, start_index, end_index);
             
@@ -57,6 +58,7 @@ public class DeteriorateDoor : MonoBehaviour
                 Manager.Instance.end_door_active = true;
             } else {
                 Manager.Instance.end_door_active = false;
+                anim.SetBool("ButtonPressed", false);
             }
         }
     }
