@@ -19,4 +19,9 @@ public class DeathScript : MonoBehaviour
     {
     	Manager.Instance.sceneManager.ResetCurrentLevel();
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Manager.Instance.sceneManager.ResetCurrentLevel();
+    }
 }
