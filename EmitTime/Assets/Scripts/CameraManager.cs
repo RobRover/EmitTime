@@ -20,7 +20,7 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
-        Manager.Instance.camera = gameObject;
+        Manager.Instance.mainCam = gameObject;
         prev_pos = new Vector3(0,0,0);
         if(Camera.main != null)
             y_distance = Math.Abs(Manager.Instance.player.transform.position.y - Camera.main.transform.position.y);
@@ -69,16 +69,5 @@ public class CameraManager : MonoBehaviour
             Camera.main.transform.position = camera_pos;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && Camera.main != null){
-
-            Manager.Instance.is_inverted = !Manager.Instance.is_inverted;
-            Manager.Instance.player.transform.localScale = new Vector3(Manager.Instance.player.transform.localScale.x * -1,
-                                                          Manager.Instance.player.transform.localScale.y,
-                                                          Manager.Instance.player.transform.localScale.z);
-            /*Camera.main.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            Vector3 camera_pos = Camera.main.transform.position;
-            camera_pos.z *= -1;
-            Camera.main.transform.position = camera_pos;*/
-        }
     }
 }

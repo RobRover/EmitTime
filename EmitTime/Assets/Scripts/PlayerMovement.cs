@@ -28,7 +28,13 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
+			controller.Jump();
 		}
+
+
+		if(Input.GetKeyDown(KeyCode.LeftShift) ){
+			controller.Flip();
+        }
 	}
 
 	void FixedUpdate ()

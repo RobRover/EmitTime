@@ -10,8 +10,11 @@ public class Manager : MonoBehaviour
     [NonSerialized] public float time;
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject end_door;
-    [NonSerialized] public GameObject camera;
+    [SerializeField] public bool end_door_active = true;
+    [NonSerialized] public GameObject mainCam;
     [NonSerialized] public bool is_inverted;
+    [SerializeField] public MySceneManager sceneManager;
+    [NonSerialized] public bool playerCanMove = true; //Do not move during start/end transition
 
     private void Awake()
     {
